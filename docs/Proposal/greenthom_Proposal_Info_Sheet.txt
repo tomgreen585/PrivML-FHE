@@ -1,0 +1,28 @@
+## ENGR489 Proposal Information Sheet
+## - Please fill up this proposal and upload it to the ECS Submission System
+##   when you submit your proposal. You MUST submit this file.
+## - You should name it [Username]_Proposal_Info_Sheet.txt where [Username]
+##   is your ECS username.
+## - Fill up this sheet after you have completed your proposal.
+
+# Title of your project
+TITLE: Implementation of a Privacy-Preserving Machine Learning Model Using Homomorphic Encryption
+
+
+# List of supervisors separated by comma. First in the list is primary supervisor
+# Add/remove as necessary
+SUPERVISORS: Arman Khouzani
+
+
+# Provide a meaningful abstract here. Just copy from your proposal. 
+ABSTRACT-BEGIN:
+This project explores the feasibility of implementing a privacy-preserving machine learning (ML) model using fully homomorphic encryption (FHE). As data security becomes increasingly critical across business sectors, solutions that enable computation on encrypted data, without revealing raw inputs, are gaining importance. This project proposes FHE as a solution to this, as a cryptographic method that allows operations to be performed directly on encrypted data, offering strong privacy guarantees. This project will use open-source libraries to train and evaluate basic ML models entirely on encrypted inputs, assessing performance, accuracy, and usability compared to an unencrypted baseline. While a working prototype and user interface may be developed to demonstrate real-world applications, the primary goal is to evaluate whether FHE is a viable and practical  solution for secure ML under current technological constraints.    
+ABSTRACT-END
+
+
+# List all potential outputs or artefacts of your project (separated by comma).
+EXPECTED-ARTEFACTS: Software, Model, UI, Evaluation Results
+
+
+# Budget requested (in NZD)
+BUDGET: $200
