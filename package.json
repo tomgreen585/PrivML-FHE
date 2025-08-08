@@ -1,0 +1,27 @@
+{
+  "name": "engr489_project",
+  "version": "1.0.0",
+  "description": "ENGR489 Project: Implementation of Privacy Preserving Machine Learning Model Using Homomorphic Encryption",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.ecs.vuw.ac.nz/course-work/project489/2025/project/greenthom/engr489_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
