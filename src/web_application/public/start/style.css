@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #5d7e82;
+  color: black;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 16px 32px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  flex-direction: column;
+}
+
+.dropbtn {
+  background-color: #ccc;
+  color: black;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ddd;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  z-index: 1000;
+  padding: 8px 0;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: black;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #bbb;
+}
+
+.dropdown:hover .dropdown-content {
+  display: none;
+}
+
+.nav-item.active,
+.nav-item:hover {
+  background-color: #ccc;
+}
+
+.spacer {
+  width: 120px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro {
+  max-width: 900px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.welcome-box {
+  margin-bottom: 24px;
+}
+
+.welcome-box p {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.welcome-box h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.description p {
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.footer {
+  text-align: right;
+  padding: 12px 24px;
+  font-size: 14px;
+  background-color: #fff;
+}
