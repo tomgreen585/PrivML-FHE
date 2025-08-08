@@ -2,6 +2,8 @@
 
 ENGR489 Project: Implementation of Privacy Preserving Machine Learning Model Using Homomorphic Encryption
 
+INFO: This is an in progress repository. It is not regularly updated due to Git implementations running from ECS Gitlab. Will be periodically updated. FHE workflow is not yet integrated and is in progress.
+
 ## Introduction
 
 With growing concerns around data privacy and collecting sensitive information, the ability to process data securely without exposing its underlying form has become a key engineering challenge. As machine learning (ML) models become increasingly integrated into business sectors, their reliance on raw data raises significant privacy and security risks.
