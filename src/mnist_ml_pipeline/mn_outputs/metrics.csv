@@ -1,0 +1,21 @@
+Timestamp,Model,Process,Metric,Score
+2025-08-26 22:29:01,Model 1,Validation,acc,0.9533
+2025-08-26 22:29:01,Model 1,Validation,ps,0.9551
+2025-08-26 22:29:01,Model 1,Validation,recall,0.9536
+2025-08-26 22:29:01,Model 1,Validation,f1,0.9540
+2025-08-26 22:29:01,Model 1,Test,acc,0.9575
+2025-08-26 22:29:01,Model 1,Test,ps,0.9575
+2025-08-26 22:29:01,Model 1,Test,recall,0.9505
+2025-08-26 22:29:01,Model 1,Test,f1,0.9535
+2025-08-26 22:29:01,Model 1,Validation,Time,60.2371
+2025-08-26 22:29:01,Model 1,Test,Time,0.0243
+2025-08-26 22:30:19,Model 2,Validation,acc,0.9567
+2025-08-26 22:30:19,Model 2,Validation,ps,0.9566
+2025-08-26 22:30:19,Model 2,Validation,recall,0.9568
+2025-08-26 22:30:19,Model 2,Validation,f1,0.9561
+2025-08-26 22:30:19,Model 2,Test,acc,0.9688
+2025-08-26 22:30:19,Model 2,Test,ps,0.9681
+2025-08-26 22:30:19,Model 2,Test,recall,0.9653
+2025-08-26 22:30:19,Model 2,Test,f1,0.9665
+2025-08-26 22:30:19,Model 2,Validation,Time,59.1457
+2025-08-26 22:30:19,Model 2,Test,Time,0.0253
