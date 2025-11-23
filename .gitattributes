@@ -1,0 +1,7 @@
+docs/Images/ml_workflow_design.png filter=lfs diff=lfs merge=lfs -text
+src/border_ml_pipeline/br_outputs/ml_metrics_report_model_1.pdf filter=lfs diff=lfs merge=lfs -text
+src/border_ml_pipeline/br_outputs/ml_metrics_report_model_2.pdf filter=lfs diff=lfs merge=lfs -text
+src/face_ml_pipeline/fc_outputs/ml_metrics_report_model_1.pdf filter=lfs diff=lfs merge=lfs -text
+src/face_ml_pipeline/fc_outputs/ml_metrics_report_model_2.pdf filter=lfs diff=lfs merge=lfs -text
+src/mnist_ml_pipeline/mn_outputs/ml_metrics_report_model_1.pdf filter=lfs diff=lfs merge=lfs -text
+src/mnist_ml_pipeline/mn_outputs/ml_metrics_report_model_2.pdf filter=lfs diff=lfs merge=lfs -text

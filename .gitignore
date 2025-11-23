@@ -1,0 +1,13 @@
+src/border_ml_pipeline/data/Humans/
+src/mnist_ml_pipeline/data/mnist
+src/face_ml_pipeline/data/Humans/
+src/fhe_face_ml_pipeline/data/Humans/
+src/fhe_border_ml_pipeline/data/Humans/
+src/fhe_mnist_ml_pipeline/data/mnist
+src/border_ml_pipeline/__pycache__
+src/mnist_ml_pipeline/__pycache__
+src/face_ml_pipeline/__pycache__
+src/fhe_face_ml_pipeline/__pycache__
+src/fhe_border_ml_pipeline/__pycache__
+src/fhe_mnist_ml_pipeline/__pycache__
+**/.DS_Store
