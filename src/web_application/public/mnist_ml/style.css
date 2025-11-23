@@ -1,0 +1,282 @@
+.border-main {
+  padding: 48px 24px 64px;
+  background: #5d7e82;
+}
+
+.section-chip {
+  display: block;
+  width: fit-content;
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin: 40px auto 32px;
+}
+
+.section-chip.encrypted {
+  background: #fff;
+  color: #000;
+}
+
+.page-title-chip {
+  display: block;
+  width: fit-content;
+  margin: 32px auto 56px auto;
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+  font-size: 28px;
+  padding: 16px 24px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+  text-align: center;
+}
+
+.feature-blurb {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  background: #ffffff;
+  color: #000;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature-blurb p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.feature-blurb .lead {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.panel {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 32px;
+}
+
+.panel-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 16px;
+  color: #000;
+  font-weight: 1000;
+}
+
+.panel-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.non-encrypted-step,
+.non-encrypted-terminal,
+.non-encrypted-output {
+  max-width: 1000px;
+  margin: 0 auto 32px;
+}
+
+.fhe-step,
+.fhe-terminal,
+.fhe-output {
+  max-width: 1000px;
+  margin: 0 auto 32px;
+}
+
+.fhe-grid {
+  margin-bottom: 48px;
+}
+
+.draw-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+#drawCanvas, #fheDrawCanvas {
+  width: 300px;
+  height: 300px;
+  background: #000;
+  border: 2px solid rgba(255, 255, 255, .6);
+  touch-action: none;
+}
+
+.draw-toolbar {
+  display: flex;
+  gap: 12px;
+}
+
+.dropzone {
+  cursor: pointer;
+  height: 300px;
+  background: rgba(0, 0, 0, .1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.dropzone.dragging {
+  border-color: #5d7e82;
+  background: rgba(93, 126, 130, 0.2);
+}
+
+.hint {
+  color: #000000;
+  opacity: .9;
+  font-size: 14px;
+}
+
+.preview-wrap {
+  height: 300px;
+  background: rgba(0, 0, 0, .12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: none;
+}
+
+.preview-canvas {
+  width: 280px;
+  height: 280px;
+  display: block;
+  margin: 0 auto;
+}
+
+#encryptedPreview {
+  background: #222;
+}
+
+.output-canvas {
+  width: 100px;
+  height: 120px;
+  background: #ffffff;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.password-input {
+  width: 200px;
+  padding: 12px 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  background: #fff;
+  color: #000;
+}
+
+.password-input:focus {
+  outline: none;
+  border-color: #5d7e82;
+  box-shadow: 0 0 0 2px rgba(93, 126, 130, 0.2);
+}
+
+.encrypt-wrap, .decrypt-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+}
+
+.chip-btn {
+  background: #5d7e82;
+  color: #ffffff;
+  margin: 12px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: 160px;
+  height: 48px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.chip-btn.subtle {
+  background: #5d7e82;
+  color: #ffffff;
+}
+
+.chip-btn:disabled {
+  background: #5d7e82;
+  color: #ffffff;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.chip-btn:hover:not(:disabled) {
+  background: #5d7e82;
+  color: #ffffff;
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+.panel.terminal {
+  height: 440px;
+  overflow: hidden;
+}
+
+.log-box {
+  background: #000;
+  color: #fff;
+  height: 320px;
+  width: 100%;
+  padding: 12px;
+  overflow-x: auto;
+  overflow-y: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 14px;
+  white-space: pre;
+}
+
+.action-buttons {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  align-items: end;
+  background: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.action-buttons .chip-btn {
+  min-width: 50px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .action-buttons .chip-btn {
+    min-width: 100%;
+  }
+}

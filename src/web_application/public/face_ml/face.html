@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PrivML-FHE | Face Detection</title>
+  <link rel="stylesheet" href="/start/style.css"/>
+  <link rel="stylesheet" href="/face_ml/style.css"/>
+</head>
+<body>
+  <div class="page-container">
+    <header class="navbar">
+      <div class="logo">PrivML-FHE</div>
+      <nav class="nav-links">
+        <a href="/" class="nav-item active">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn" data-dropdown="tools">Tools</button>
+          <div class="dropdown-content" id="dropdown-tools">
+            <a href="/mnist_ml">Number Detector</a>
+            <a href="/border_ml">Border your image</a>
+            <a href="/face_ml">Face Detection</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn" data-dropdown="github">GitHub</button>
+          <div class="dropdown-content" id="dropdown-github">
+            <a href="https://github.com/tomgreen585/PrivML-FHE" target="_blank">GitHub Repository</a>
+          </div>
+        </div>
+      </nav>
+      <div class="spacer"></div>
+    </header>
+    <main class="border-main">
+      <section class="title-section">
+        <div class="page-title-chip">Face Detection</div>
+      </section>
+
+      <section class="intro-section">
+        <div class="feature-blurb">
+          <p class="lead">
+            <strong>Face Detection</strong> automatically locates and identifies faces within any image using AI.
+          </p>
+          <p>
+            The model precisely outputs bounding boxes for each detected face, handling varied lighting, and diverse angles. Ideal for preprocessing in face recognition, cropping profile images, or enabling downstream AI tasks while maintaining accuracy and image quality.
+          </p>
+        </div>
+      </section>
+
+      <section class="non-encrypted-section">
+        <div class="section-chip">Non-Encrypted</div>
+
+        <div class="non-encrypted-step step-one">
+          <div class="panel">
+            <div class="panel-title">Step One</div>
+            <div class="panel-subtitle">Upload Input Image For The Model</div>
+            <div id="dropzone" class="dropzone">
+              <button type="button" id="pickBtn" class="chip-btn">Insert Image</button>
+              <input id="fileInput" type="file" accept="image/*" hidden />
+              <div class="hint">Drag & drop image here</div>
+            </div>
+            <div class="template-gallery">
+              <p><strong>Select from template</strong></p>
+              <div class="template-images">
+                <img src="/face_ml/template_images/image_1.png" class="template-img" data-image="image_1.png" />
+                <img src="/face_ml/template_images/image_2.png" class="template-img" data-image="image_2.png" />
+                <img src="/face_ml/template_images/image_3.png" class="template-img" data-image="image_3.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="non-encrypted-step step-two">
+          <div class="panel">
+            <div class="panel-title">Step Two</div>
+            <div class="panel-subtitle">Send Image To The Model</div>
+            <div class="preview-wrap">
+              <img id="confirmImg" class="preview-img" alt="Ready to send" />
+            </div>
+            <button id="sendBtn" class="chip-btn" disabled>Send Image to AI</button>
+          </div>
+        </div>
+
+        <div class="non-encrypted-terminal">
+          <div class="panel terminal">
+            <div class="panel-title">Log Outputs</div>
+            <pre id="logBox" class="log-box">[INFO] Waiting for image…</pre>
+          </div>
+        </div>
+
+        <div class="non-encrypted-output">
+          <div class="panel">
+            <div class="panel-title">Output</div>
+            <canvas id="outputCanvas" class="output-canvas"></canvas>
+            <div class="action-buttons">
+              <button id="saveBtn" class="chip-btn" disabled>Save Image</button>
+              <button id="resetBtn" class="chip-btn subtle">Restart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="encrypted-section">
+        <div class="section-chip encrypted">Encrypted – FHE</div>
+
+        <div class="fhe-step step-one">
+          <div class="panel">
+            <div class="panel-title">Step One</div>
+            <div class="panel-subtitle">Upload Face Image</div>
+            <div class="dropzone" id="faceDropzone">
+              <button type="button" id="facePickBtn" class="chip-btn">Insert Image</button>
+              <input id="faceFileInput" type="file" accept="image/*" hidden />
+              <div class="hint">Drag & drop image here</div>
+            </div>
+            <div class="template-gallery">
+              <p><strong>Select from template</strong></p>
+              <div class="template-images">
+                <img src="/face_ml/template_images/image_1.png" class="template-img-encrypted" data-image="image_1.png" />
+                <img src="/face_ml/template_images/image_2.png" class="template-img-encrypted" data-image="image_2.png" />
+                <img src="/face_ml/template_images/image_3.png" class="template-img-encrypted" data-image="image_3.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fhe-step step-two">
+          <div class="panel">
+            <div class="panel-title">Step Two</div>
+            <div class="panel-subtitle">Enter Password To Encrypt Image</div>
+            <div class="encrypt-wrap">
+              <input type="password" id="faceEncryptPassword" class="password-input" placeholder="Enter password..." />
+              <button id="faceEncryptBtn" class="chip-btn" disabled>Encrypt</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="fhe-step step-three">
+          <div class="panel">
+            <div class="panel-title">Step Three</div>
+            <div class="panel-subtitle">Encrypted Image Preview</div>
+            <div class="preview-wrap">
+              <canvas id="faceEncryptedPreview" class="preview-canvas"></canvas>
+            </div>
+            <button id="faceSendBtn" class="chip-btn" disabled>Send Image to AI</button>
+          </div>
+        </div>
+
+        <div class="fhe-terminal">
+          <div class="panel terminal">
+            <div class="panel-title">Log Outputs</div>
+            <pre id="faceLogBox" class="log-box">[INFO] Waiting for encrypted image…</pre>
+          </div>
+        </div>
+
+        <div class="fhe-step step-four">
+          <div class="panel">
+            <div class="panel-title">Step Four</div>
+            <div class="panel-subtitle">Enter Password To Decrypt Output</div>
+            <div class="decrypt-wrap">
+              <input type="password" id="faceDecryptPassword" class="password-input" placeholder="Enter password..." />
+              <button id="faceDecryptBtn" class="chip-btn" disabled>Decrypt</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="fhe-output">
+          <div class="panel">
+            <div class="panel-title">Output</div>
+            <div class="preview-wrap">
+              <canvas id="faceOutputCanvas" class="output-canvas"></canvas>
+            </div>
+            <div class="action-buttons">
+              <button id="faceSaveBtn" class="chip-btn" disabled>Save Image</button>
+              <button id="faceRestartBtn" class="chip-btn subtle">Restart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">By Tom Green</footer>
+  </div>
+  <script src="/start/nav.js"></script>
+  <script src="/face_ml/face.js"></script>
+  <script src="/face_ml/fhe-face.js"></script>
+</body>
+</html>

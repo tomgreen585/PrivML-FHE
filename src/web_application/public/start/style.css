@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #5d7e82;
+  color: black;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 16px 32px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-item, .dropbtn {
+  text-decoration: none;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: transparent;
+  transition: background-color 120ms ease;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  flex-direction: column;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ddd;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  z-index: 1000;
+  padding: 8px 0;
+}
+
+.dropdown-content a {
+  color: #000;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #bbb;
+}
+
+.dropdown:hover .dropdown-content {
+  display: none;
+}
+
+.nav-item:hover, .dropbtn:hover {
+  background-color: #ddd;
+}
+
+.spacer {
+  width: 120px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.intro {
+  max-width: 900px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.welcome-box {
+  margin-bottom: 24px;
+}
+
+.welcome-box p {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.welcome-box h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.description p {
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.tools-section {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.tools-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.tool-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 200px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.tool-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.footer {
+  text-align: right;
+  padding: 12px 24px;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px 16px;
+    gap: 3rem;
+  }
+  
+  .tools-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .tool-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}

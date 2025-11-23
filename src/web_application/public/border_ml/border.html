@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrivML-FHE | Border Your Image</title>
+  <link rel="stylesheet" href="/start/style.css" />
+  <link rel="stylesheet" href="/border_ml/style.css" />
+</head>
+<body>
+  <div class="page-container">
+    <header class="navbar">
+      <div class="logo">PrivML-FHE</div>
+      <nav class="nav-links">
+        <a href="/" class="nav-item active">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn" data-dropdown="tools">Tools</button>
+          <div class="dropdown-content" id="dropdown-tools">
+            <a href="/mnist_ml">Number Detector</a>
+            <a href="/border_ml">Border your image</a>
+            <a href="/face_ml">Face Detection</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn" data-dropdown="github">GitHub</button>
+          <div class="dropdown-content" id="dropdown-github">
+            <a href="https://github.com/tomgreen585/PrivML-FHE" target="_blank">GitHub Repository</a>
+          </div>
+        </div>
+      </nav>
+      <div class="spacer"></div>
+    </header>
+    <main class="border-main">
+      <section class="title-section">
+        <div class="page-title-chip">Border Your Image</div>
+      </section>
+      <section class="intro-section">
+        <div class="feature-blurb">
+          <p class="lead">
+            <strong>Border Your Image</strong> automatically detects and processes your image to apply a clean,
+            consistent, and customizable border, no manual editing required.
+          </p>
+          <p>
+            Powered by a trained deep learning model, it ensures pixel-perfect alignment, smooth corners, and
+            seamless integration with the original image content.
+          </p>
+        </div>
+      </section>
+      <section class="non-encrypted-section">
+        <div class="section-chip">Non-Encrypted</div>
+        <div class="non-encrypted-step step-one">
+          <div class="panel">
+            <div class="panel-title">Step One</div>
+            <div class="panel-subtitle">Upload Input Image For The Model</div>
+            <div id="dropzone" class="dropzone">
+              <button type="button" id="pickBtn" class="chip-btn">Insert Image</button>
+              <input id="fileInput" type="file" accept="image/*" hidden />
+              <div class="hint">Drag & drop image here</div>
+            </div>
+            <div class="template-gallery">
+              <p><strong>Select from template</strong></p>
+              <div class="template-images">
+                <img src="/face_ml/template_images/image_1.png" class="template-img" data-image="image_1.png" />
+                <img src="/face_ml/template_images/image_2.png" class="template-img" data-image="image_2.png" />
+                <img src="/face_ml/template_images/image_3.png" class="template-img" data-image="image_3.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="non-encrypted-step step-two">
+          <div class="panel">
+            <div class="panel-title">Step Two</div>
+            <div class="panel-subtitle">Send Image To The Model</div>
+            <div class="preview-wrap">
+              <img id="confirmImg" class="preview-img" alt="Ready to send" />
+            </div>
+            <button id="sendBtn" class="chip-btn" disabled>Send Image to AI</button>
+          </div>
+        </div>
+        <div class="non-encrypted-terminal">
+          <div class="panel terminal">
+            <div class="panel-title">Log Outputs</div>
+            <pre id="logBox" class="log-box">[INFO] Waiting for image…</pre>
+          </div>
+        </div>
+        <div class="non-encrypted-output">
+          <div class="panel">
+            <div class="panel-title">Output</div>
+            <canvas id="outputCanvas" class="output-canvas"></canvas>
+            <div class="action-buttons">
+              <button id="saveBtn" class="chip-btn" disabled>Save Image</button>
+              <button id="resetBtn" class="chip-btn subtle">Restart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="encrypted-section">
+        <div class="section-chip encrypted">Encrypted – FHE</div>
+        <div class="fhe-step step-one">
+          <div class="panel">
+            <div class="panel-title">Step One</div>
+            <div class="panel-subtitle">Upload Input Image For The Model</div>
+            <div class="dropzone" id="borderDropzone">
+              <button type="button" id="borderPickBtn" class="chip-btn">Insert Image</button>
+              <input id="borderFileInput" type="file" accept="image/*" hidden />
+              <div class="hint">Drag & drop image with borders here</div>
+            </div>
+            <div class="template-gallery">
+              <p><strong>Select from template</strong></p>
+              <div class="template-images">
+                <img src="/face_ml/template_images/image_1.png" class="template-img-encrypted" data-image="image_1.png" />
+                <img src="/face_ml/template_images/image_2.png" class="template-img-encrypted" data-image="image_2.png" />
+                <img src="/face_ml/template_images/image_3.png" class="template-img-encrypted" data-image="image_3.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fhe-step step-two">
+          <div class="panel">
+            <div class="panel-title">Step Two</div>
+            <div class="panel-subtitle">Enter Password To Encrypt Image</div>
+            <div class="encrypt-wrap">
+              <input type="password" id="borderEncryptPassword" class="password-input" placeholder="Enter password..." />
+              <button id="borderEncryptBtn" class="chip-btn" disabled>Encrypt</button>
+            </div>
+          </div>
+        </div>
+        <div class="fhe-step step-three">
+          <div class="panel">
+            <div class="panel-title">Step Three</div>
+            <div class="panel-subtitle">Send Encrypted Image To The Model</div>
+            <div class="preview-wrap">
+              <canvas id="borderEncryptedPreview" class="preview-canvas"></canvas>
+            </div>
+            <button id="borderSendBtn" class="chip-btn" disabled>Send Image to AI</button>
+          </div>
+        </div>
+        <div class="fhe-terminal">
+          <div class="panel terminal">
+            <div class="panel-title">Log Outputs</div>
+            <pre id="borderLogBox" class="log-box">[INFO] Waiting for encrypted image…</pre>
+          </div>
+        </div>
+        <div class="fhe-step step-four">
+          <div class="panel">
+            <div class="panel-title">Step Four</div>
+            <div class="panel-subtitle">Enter Password To Decrypt Output</div>
+            <div class="decrypt-wrap">
+              <input type="password" id="borderDecryptPassword" class="password-input" placeholder="Enter password..." />
+              <button id="borderDecryptBtn" class="chip-btn" disabled>Decrypt</button>
+            </div>
+          </div>
+        </div>
+        <div class="fhe-output">
+          <div class="panel">
+            <div class="panel-title">Output</div>
+            <div class="preview-wrap">
+              <canvas id="borderOutputCanvas" class="output-canvas"></canvas>
+            </div>
+            <div class="action-buttons">
+              <button id="borderSaveBtn" class="chip-btn" disabled>Save Image</button>
+              <button id="borderRestartBtn" class="chip-btn subtle">Restart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">By Tom Green</footer>
+  </div>
+  <script src="/start/nav.js"></script>
+  <script src="/border_ml/border.js"></script>
+  <script src="/border_ml/fhe-border.js"></script>
+</body>
+</html>
